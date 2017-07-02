@@ -15,9 +15,7 @@ import com.theomota.hdrcam.R;
 
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfFloat;
 import org.opencv.imgcodecs.Imgcodecs;
-import org.opencv.photo.CalibrateDebevec;
 import org.opencv.photo.Photo;
 
 import java.io.File;
@@ -63,6 +61,7 @@ public class HdrActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //createHDR();
+                Toast.makeText(HdrActivity.this, "Init HDR", Toast.LENGTH_SHORT).show();
                 new generateHDR().execute();
 
             }
@@ -80,11 +79,11 @@ public class HdrActivity extends Activity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            float[] InTimes = {0.03333f, 0.33333f, 4f};
+            //float[] InTimes = {0.03333f, 0.33333f, 4f};
             List<Mat> images = new ArrayList<>();
-            Mat response = new Mat();
-            Mat times = new MatOfFloat(InTimes);
-            CalibrateDebevec debevec = Photo.createCalibrateDebevec();
+//            Mat response = new Mat();
+//            Mat times = new MatOfFloat(InTimes);
+//            CalibrateDebevec debevec = Photo.createCalibrateDebevec();
 
             try {
                 images.add(Imgcodecs.imread(file1.getAbsolutePath()));
@@ -124,6 +123,7 @@ public class HdrActivity extends Activity {
         @Override
         protected void onPostExecute(Void aVoid) {
             Toast.makeText(HdrActivity.this, "HDR pronto", Toast.LENGTH_SHORT).show();
+            HdrActivity.this.finish();
         }
     }
 

@@ -175,7 +175,7 @@ public class MainActivity extends Activity implements OnPictureSaved {
                             }
                         });
                     }
-                }, 1000);
+                }, 450);
             }
         });
 
