@@ -21,6 +21,7 @@ import android.widget.FrameLayout;
 
 import com.theomota.OnPictureSaved;
 import com.theomota.hdrcam.R;
+import com.theomota.hdrcam.hdr.HdrActivity;
 
 import java.io.File;
 
@@ -131,6 +132,8 @@ public class MainActivity extends Activity implements OnPictureSaved {
             takePicture(10);
         else {
             pictureTaken = 0;
+            Intent i = new Intent(this, HdrActivity.class);
+            startActivity(i);
         }
 
         Log.d(TAG, "onPictureSaved: ENTROU NO CALLBACK");

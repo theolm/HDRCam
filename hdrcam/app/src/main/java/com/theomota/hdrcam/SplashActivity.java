@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.theomota.hdrcam.hdr.HdrActivity;
+import com.theomota.hdrcam.Camera.MainActivity;
 
 import org.opencv.android.InstallCallbackInterface;
 import org.opencv.android.LoaderCallbackInterface;
@@ -27,7 +27,7 @@ public class SplashActivity extends Activity {
             public void onManagerConnected(int i) {
                 switch (i) {
                     case LoaderCallbackInterface.SUCCESS: {
-                        Intent intent = new Intent(SplashActivity.this, HdrActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                         Log.i("OpenCV", "OpenCV loaded successfully");

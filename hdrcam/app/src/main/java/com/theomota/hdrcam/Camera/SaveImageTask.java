@@ -7,8 +7,6 @@ import android.util.Log;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by theolm on 01/07/17.
@@ -37,9 +35,7 @@ public class SaveImageTask extends AsyncTask<byte[], Void, Void> {
 
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyymmddhhmmss");
-        String date = dateFormat.format(new Date());
-        String photoFile = "Picture_" + date + "_" +String.valueOf(number) + ".jpg";
+        String photoFile = String.valueOf(number) + ".jpg";
 
         String filename = pictureFileDir.getPath() + File.separator + photoFile;
 
